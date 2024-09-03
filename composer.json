@@ -41,5 +41,25 @@
                 "LmcAdmin\\ConfigProvider"
             ]
         }
+    },
+    "require-dev": {
+        "laminas/laminas-coding-standard": "^2.5"
+    },
+    "scripts": {
+        "check": [
+            "@cs-check",
+            "@test"
+        ],
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "test": "phpunit --colors=always",
+        "test-coverage": "phpunit --coverage-clover ./build/logs/clover.xml",
+        "test-coverage-html": "phpunit --colors=always --coverage-html ./build/html",
+        "static-analysis": "psalm --shepherd --stats"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }
