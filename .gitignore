@@ -2,3 +2,6 @@ vendor
 ##composer.lock
 ## PHPStorm files
 /.idea
+.phpcs*
+/.phpunit.cache
+/build
