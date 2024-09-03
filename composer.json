@@ -6,20 +6,15 @@
     "keywords": [
         "laminas"
     ],
-    "homepage": "https://github.com/juriansluiman/LmcAdmin",
+    "homepage": "https://lm-commons.github.io/LmcAdmin",
     "authors": [
         {
-            "name": "Jurian Sluiman ",
-            "email": "jurian@juriansluiman.nl",
-            "homepage": "http://juriansluiman.nl/en/"
-        },
-        {
-            "name": "Martin Shwalbe",
-            "email": "martin.shwalbe@gmail.com"
+            "name": "Eric Richer",
+            "email": "eric.richer@vistoconsulting.com"
         }
     ],
     "require": {
-        "php": "^7.3 || ^8.0",
+        "php": "~8.1.0 || ~8.2.0 || ~8.3.0",
         "laminas/laminas-modulemanager": "^2.5",
         "laminas/laminas-loader": "^2.6",
         "laminas/laminas-eventmanager": "^3.0",
@@ -34,6 +29,11 @@
             "LmcAdmin\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "LmcTest\\Admin\\": "test/"
+        }
+    },
     "extra": {
         "lm": {
             "component": "LmcAdmin",
@@ -43,7 +43,10 @@
         }
     },
     "require-dev": {
-        "laminas/laminas-coding-standard": "^2.5"
+        "laminas/laminas-coding-standard": "^2.5",
+        "phpunit/phpunit": "^10.5.30",
+        "psalm/plugin-phpunit": "^0.19.0",
+        "vimeo/psalm": "^5.25"
     },
     "scripts": {
         "check": [

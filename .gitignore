@@ -3,3 +3,5 @@ vendor
 ## PHPStorm files
 /.idea
 .phpcs*
+/.phpunit.cache
+/build
