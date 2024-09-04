@@ -21,8 +21,7 @@ declare(strict_types=1);
 
 namespace LmcTest\Admin;
 
-use LmcAdmin\ConfigProvider;
-use LmcAdmin\Navigation\Service\AdminNavigationFactory;
+use Lmc\Admin\ConfigProvider;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
@@ -34,10 +33,11 @@ class ConfigProviderTest extends TestCase
         $provider = new ConfigProvider();
         $this->assertArrayHasKey('dependencies', $provider());
         $this->assertArrayHasKey('view_manager', $provider());
-        $this->assertArrayHasKey('lmcadmin', $provider());
+        $this->assertArrayHasKey('lmc_admin', $provider());
+        $this->assertArrayHasKey('controllers', $provider());
+        $this->assertArrayHasKey('router', $provider());
         $this->assertArrayHasKey('factories', $provider->getDependencyConfig());
         $this->assertArrayHasKey('template_path_stack', $provider->getViewManagerConfig());
-        $this->assertArrayHasKey('use_admin_layout', $provider->getModuleConfig());
-        $this->assertArrayHasKey('admin_layout_template', $provider->getModuleConfig());
+        $this->assertEmpty($provider->getModuleConfig());
     }
 }
