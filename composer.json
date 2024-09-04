@@ -36,7 +36,7 @@
     },
     "extra": {
         "laminas": {
-            "component": "Lmc\\Admin",
+            "module": "Lmc\\Admin",
             "config-provider": [
                 "LmcAdmin\\ConfigProvider"
             ]
