@@ -2,60 +2,73 @@
 sidebar_position: 2
 ---
 # Routes
-LmcAdmin enables a single route named `lmcadmin`, which is a literal route and standard using the url `/admin`. You can create child routes under `lmcadmin` so you enable urls like `/admin/foo` or `/admin/bar/baz`.
+LmcAdmin enables a single route named `lmcadmin`, which is a literal route and mapped to the url `/admin`. 
+You can create child routes under `lmcadmin` so you enable urls like `/admin/users` or `/admin/roles/permissions`.
 
 ## Add child route
-To register a route as child route, the following example takes the option you name that route `foo`. The complete path should look like `/admin/foo`, so `foo` is a literal route with the route value `/foo`. Say you want this route to connect to your `MyModule\Controller\MyController` controller and the `index` action, create this config in your `module.config.php`:
+To register a route as child route, the following example takes the option you name the route `users`. 
+The complete path should look like `/admin/users`, so `users` is a literal route with the route value `/users`. 
+Say you want this route to connect to the `MyAdminModule\Controller\UsersController` controller and the `index` action, 
+create this config in your `module.config.php`:
 
 ```php
-    'router' => array(
-        'routes' => array(
-            'lmcadmin' => array(
-                'child_routes' => array(
-                    'foo' => array(
-                        'type' => 'literal',
-                        'options' => array(
-                            'route' => '/foo',
-                            'defaults' => array(
-                                'controller' => 'MyModule\Controller\MyController',
-                                'action'     => 'index',
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-        ),
-    ),
+'router' => [
+    'routes' => [
+        'lmcadmin' => [
+            'child_routes' => [
+                'users' => [
+                    'type' => 'literal',
+                    'options' => [
+                        'route' => '/users',
+                        'defaults' => [
+                            'controller' => 'MyAdminModule\Controller\UsersController::class',
+                            'action'     => 'index',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
+],
 ```
 
 ## Change the `/admin` url
-If you want your admin interface at `/backend` or something else, you must override the value of the route. In the following config, the `/admin` route value is replaced with `/backend`. Make sure this is enabled in a config where the module is registered *later* than LmcAdmin (otherwise, the config will not overwrite LmcAdmin's configuration):
+If you want your admin interface at `/backend` or something else, you must override the value of the route. In the 
+following config, the `/admin` route value is replaced with `/backend`. Make sure this is enabled in a config where the 
+module is registered ***after*** LmcAdmin (otherwise, the config will not overwrite LmcAdmin's configuration):
 
 ```php
-    'router' => array(
-        'routes' => array(
-            'lmcadmin' => array(
-                'options' => array(
-                    'route'    => '/backend',
-            ),
-        ),
-    ),
+'router' => [
+    'routes' => [
+        'lmcadmin' => [
+            'options' => [
+                'route'    => '/backend',
+         ],
+    ],
+],
 ```
 
 ## Change the controller behind `/admin`
-By default, the `/admin` url links to the `LmcAdmin\Controller\AdminController` controller. It's an empty action and a simple view script is rendered. If you want, for example, create a dashboard on the admin index page, you probably need to point the route to another controller. In the following config, the `lmcadmin` route's controller is replaced with `MyModule/Controller/AdminController` and the action is set to `dashboard`. Make sure this is enabled in a config where the module is registered *later* than LmcAdmin (otherwise, the config will not overwrite LmcAdmin's configuration):
+By default, the `/admin` url links to the `LmcAdmin\Controller\AdminController` controller. 
+It's an empty action and a simple view script is rendered. 
+If you want, for example, to create a dashboard on the admin index page, you probably need to point the route to 
+another controller. 
+In the following config, the `lmcadmin` route's controller is replaced with `MyAdminModule/Controller/AdminController` 
+and the action is set to `dashboard`. 
+Make sure this is enabled in a config where the module is registered ***later*** LmcAdmin (otherwise, the config will 
+not overwrite LmcAdmin's configuration):
 
 ```php
-    'router' => array(
-        'routes' => array(
-            'lmcadmin' => array(
-                'options' => array(
-                    'defaults' => array(
-                        'controller' => 'MyModule/Controller/AdminController',
-                        'action'     => 'dashboard',
-                    ),
-                ),
-            ),
-        ),
-    ),
+'router' => [
+    'routes' => [
+        'lmcadmin' => [
+            'options' => [
+                'defaults' => [
+                    'controller' => 'MyModule/Controller/AdminController',
+                    'action'     => 'dashboard',
+                ],
+            ],
+        ],
+    ],
+],
 ```
