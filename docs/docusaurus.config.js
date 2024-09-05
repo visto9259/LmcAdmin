@@ -11,7 +11,7 @@ const ProjectName = 'LmcAdmin';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: 'LmcAdmin',
-    tagline: 'Admin interface for Laminas MVC framework',
+    tagline: 'Admin interface for Laminas MVC applications',
     favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -75,59 +75,70 @@ themeConfig:
                 src: 'img/LMC-logo.png',
             },
             items: [
-            {
-                type: 'docSidebar',
-                sidebarId: 'documentationSidebar',
-                position: 'left',
-                label: 'Documentation',
-            },
-            {to: '/blog', label: 'Blog', position: 'left'},
+                {
+                    type: 'docSidebar',
+                    sidebarId: 'documentationSidebar',
+                    position: 'left',
+                    label: 'Documentation',
+                },
+                //{to: '/blog', label: 'Blog', position: 'left'},
+                {
+                    type: "docsVersionDropdown",
+                    position: "right",
+                },
                 {
                     href: 'https://lm-commons.github.io',
                     label: 'LM-Commons',
                     position: 'right',
-            },
-            {
-                href: `https://github.com/lm-commons/${ProjectName.toLowerCase()}`,
-                label: 'GitHub',
-                position: 'right',
-            },
+                },
+                {
+                    href: `https://github.com/lm-commons/${ProjectName.toLowerCase()}`,
+                    //label: 'GitHub',
+                    position: 'right',
+                    className: 'header-github-link',
+                },
             ],
         },
         footer: {
             style: 'dark',
             links: [
-            {
-                title: 'Docs',
-                items: [
+                /*
                 {
-                    label: 'Documentation',
-                    to: '/docs/Introduction',
+                    title: 'Docs',
+                    items: [
+                        {
+                            label: 'Documentation',
+                            to: '/docs/Introduction',
+                        },
+                    ],
                 },
-                ],
-            },
-            {
-                title: 'Community',
-                items: [
+
+                 */
                 {
-                    label: 'Slack',
-                    href: 'https://join.slack.com/t/lm-commons/shared_invite/zt-2gankt2wj-FTS45hp1W~JEj1tWvDsUHQ',
-                },
-                ],
-            },
-            {
-                title: 'More',
-                items: [
-                {
-                    label: 'Blog',
-                    to: '/blog',
+                    title: 'Community',
+                    items: [
+                        {
+                            label: 'Slack',
+                            href: 'https://join.slack.com/t/lm-commons/shared_invite/zt-2gankt2wj-FTS45hp1W~JEj1tWvDsUHQ',
+                        },
+                    ],
                 },
                 {
-                    label: 'GitHub',
-                    href: `https://github.com/lm-commons/${ProjectName.toLowerCase()}`,
+                    title: 'More',
+                    items: [
+                        /*
+                        {
+                            label: 'Blog',
+                            to: '/blog',
+                        },
+
+                         */
+                        {
+                            label: 'GitHub',
+                            href: `https://github.com/lm-commons/${ProjectName.toLowerCase()}`,
+                        },
+                    ],
                 },
-                ],
-            },
             ],
             copyright: `Copyright © ${new Date().getFullYear()} LM-Commons Organization. Built with Docusaurus.`,
         },

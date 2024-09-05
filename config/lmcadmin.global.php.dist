@@ -8,36 +8,28 @@ declare(strict_types=1);
  * If you have a ./config/autoload/ directory set up for your project, you can
  * drop this config file in it and change the values as you wish.
  */
-
-$settings = [
-    /**
-     * Flag to use layout/admin as the admin layout
-     *
-     * The layout when LmcAdmin is accessed will be set to an alternative layout,
-     * to distinguish the admin from the normal site. The layout is modified when
-     * the "admin" route or any subroute from "admin" is dispatched. Default is
-     * this setting true.
-     *
-     * 'use_admin_layout' => true,
-     *
-     */
-
-    /**
-     * Layout template for LmcAdmin
-     *
-     * When use_admin_layout is set to true, this value will be used as template
-     * name for the admin layout. Default is 'layout/admin'
-     *
-     * 'admin_layout_template' => 'layout/admin',
-     *
-     * Accepted is a string that resolves to a view script
-     */
-];
-/**
- * You do not need to edit below this line
- */
 return [
-    'lmc_admin' => $settings,
+    'lmc_admin' => [
+        /**
+         * Flag to use layout/admin as the admin layout
+         *
+         * The layout when LmcAdmin is accessed will be set to an alternative layout,
+         * to distinguish the admin from the normal site. The layout is modified when
+         * the "admin" route or any subroute from "admin" is dispatched. Default is
+         * this setting true.
+         */
+        // 'use_admin_layout' => true,
+
+        /**
+         * Layout template for LmcAdmin
+         *
+         * When use_admin_layout is set to true, this value will be used as template
+         * name for the admin layout. Default is 'layout/admin'
+         * Accepted is a string that resolves to a view script
+         */
+        // 'admin_layout_template' => 'layout/lmcadmin',
+    ],
+
     /**
      * Suggested LmcRbacMvc configuration for RBAC
      */
