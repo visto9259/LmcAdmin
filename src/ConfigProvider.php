@@ -9,9 +9,6 @@ use Lmc\Admin\Listener\LayoutTemplateSelectListenerFactory;
 use Lmc\Admin\Options\ModuleOptions;
 use Lmc\Admin\Options\ModuleOptionsFactory;
 
-/**
- * Class ConfigProvider.
- */
 class ConfigProvider
 {
     public function __invoke(): array
@@ -19,18 +16,18 @@ class ConfigProvider
         return [
             'dependencies' => $this->getDependencyConfig(),
             'view_manager' => $this->getViewManagerConfig(),
-            'lmc_admin' => $this->getModuleConfig(),
-            'controllers' => $this->getControllerConfig(),
-            'router'    => $this->getRouterConfig(),
+            'lmc_admin'    => $this->getModuleConfig(),
+            'controllers'  => $this->getControllerConfig(),
+            'router'       => $this->getRouterConfig(),
         ];
     }
-    
+
     public function getDependencyConfig(): array
     {
         return [
             'factories' => [
-                'admin_navigation' => Navigation\Service\AdminNavigationFactory::class,
-                ModuleOptions::class => ModuleOptionsFactory::class,
+                'admin_navigation'                  => Navigation\Service\AdminNavigationFactory::class,
+                ModuleOptions::class                => ModuleOptionsFactory::class,
                 LayoutTemplateSelectListener::class => LayoutTemplateSelectListenerFactory::class,
             ],
         ];
@@ -42,9 +39,9 @@ class ConfigProvider
             'template_path_stack' => [
                 __DIR__ . '/../view',
             ],
-            'template_map' => [
+            'template_map'        => [
                 'lmc-admin/admin/index' => __DIR__ . '/../view/lmc/admin/index.phtml',
-                'layout/lmcadmin' => __DIR__ . '/../view/lmc/layout/admin.phtml',
+                'layout/lmcadmin'       => __DIR__ . '/../view/lmc/layout/admin.phtml',
             ],
         ];
     }
@@ -82,12 +79,12 @@ class ConfigProvider
         return [
             'routes' => [
                 'lmcadmin' => [
-                    'type' => 'literal',
+                    'type'    => 'literal',
                     'options' => [
-                        'route' => '/admin',
+                        'route'    => '/admin',
                         'defaults' => [
                             'controller' => Controller\AdminController::class,
-                            'action' => 'index',
+                            'action'     => 'index',
                         ],
                     ],
                     'may_terminate' => true,
