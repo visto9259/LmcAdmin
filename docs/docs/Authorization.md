@@ -3,12 +3,12 @@ sidebar_position: 4
 ---
 # Authorization
 
-It is highly suggested to implement some form of authorization to restrict access to admin functions to users with 
+It is typical to implement some form of authorization to restrict access to admin functions to users with 
 administrative privileges.
 
 LmcAdmin does not prescribe a specific authorization framework.
 
-However, LmcAdmin can allow authorization via [LmcRbacMvc](https://lm-commons.github.io/LmcRbac). 
+However, LmcAdmin can enable authorization via [LmcRbacMvc](https://lm-commons.github.io/LmcRbac). 
 
 ## Authorization using LmcRbacMvc 
 

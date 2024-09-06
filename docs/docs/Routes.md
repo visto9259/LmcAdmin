@@ -2,8 +2,8 @@
 sidebar_position: 2
 ---
 # Routes
-LmcAdmin enables a single route named `lmcadmin`, which is a literal route and mapped to the url `/admin`. 
-You can create child routes under `lmcadmin` so you enable urls like `/admin/users` or `/admin/roles/permissions`.
+LmcAdmin defines a single route named `lmcadmin`, which is a `Laminas\Router\Http\Literal` route and mapped to the url `/admin`. 
+You can create child routes under `lmcadmin` so you can enable urls like `/admin/users` or `/admin/roles/permissions`.
 
 ## Add child route
 To register a route as child route, the following example takes the option you name the route `users`. 
@@ -17,11 +17,11 @@ create this config in your `module.config.php`:
         'lmcadmin' => [
             'child_routes' => [
                 'users' => [
-                    'type' => 'literal',
+                    'type' => Laminas\Router\Http\Literal::class,
                     'options' => [
                         'route' => '/users',
                         'defaults' => [
-                            'controller' => 'MyAdminModule\Controller\UsersController::class',
+                            'controller' => MyAdminModule\Controller\UsersController::class,
                             'action'     => 'index',
                         ],
                     ],
@@ -49,8 +49,8 @@ module is registered ***after*** LmcAdmin (otherwise, the config will not overwr
 ```
 
 ## Change the controller behind `/admin`
-By default, the `/admin` url links to the `LmcAdmin\Controller\AdminController` controller. 
-It's an empty action and a simple view script is rendered. 
+By default, the `/admin` url links to the `LmcAdmin\Controller\AdminController` controller.
+`LmcAdmin\Controller\AdminController` is an simple action that only returns a simple view script. 
 If you want, for example, to create a dashboard on the admin index page, you probably need to point the route to 
 another controller. 
 In the following config, the `lmcadmin` route's controller is replaced with `MyAdminModule/Controller/AdminController` 
@@ -64,7 +64,7 @@ not overwrite LmcAdmin's configuration):
         'lmcadmin' => [
             'options' => [
                 'defaults' => [
-                    'controller' => 'MyModule/Controller/AdminController',
+                    'controller' => MyModule\Controller\AdminController::class,
                     'action'     => 'dashboard',
                 ],
             ],

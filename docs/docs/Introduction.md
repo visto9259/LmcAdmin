@@ -18,13 +18,15 @@ breadcrumbs and other links.
 
 Install the module:
 
+```bash
 $ composer require lm-commons/lmc-admin
+```
 
 You will be prompted by the laminas-component-installer plugin to inject LM-Commons\LmcAdmin.
 
 :::note[Manual installation:]
 
-Enable the module by adding `Lmc\admin` key to your `application.config.php` or `modules.config.php` file for Laminas MVC
+Enable the module by adding `Lmc\Admin` key to your `application.config.php` or `modules.config.php` file for Laminas MVC
 applications.
 :::
 
