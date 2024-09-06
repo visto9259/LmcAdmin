@@ -1,8 +1,10 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 namespace Lmc\Admin;
 
+use Laminas\Router\Http\Literal;
 use Laminas\ServiceManager\Factory\InvokableFactory;
 use Lmc\Admin\Listener\LayoutTemplateSelectListener;
 use Lmc\Admin\Listener\LayoutTemplateSelectListenerFactory;
@@ -79,8 +81,8 @@ class ConfigProvider
         return [
             'routes' => [
                 'lmcadmin' => [
-                    'type'    => 'literal',
-                    'options' => [
+                    'type'          => Literal::class,
+                    'options'       => [
                         'route'    => '/admin',
                         'defaults' => [
                             'controller' => Controller\AdminController::class,
