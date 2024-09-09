@@ -15,7 +15,11 @@ by the `Lmc\Admin` namespace.
 
 ### Default layout template name
 
-The default layout template has been changed from `layout/admin` to `layout/lmcadmin`.
+The default layout template has been changed from `layout/admin` to `layout/lmcadmin`
+
+The `index` action of the `AdminController` now returns a View Model with its template set to
+`'lmc-admin/admin/index'`. To use your customer view template, you need to add a View Manager
+template map entry for `'lmc-admin/admin/index'` that points to your custom view.
 
 ### Configuration key
 
