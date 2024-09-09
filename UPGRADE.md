@@ -1,6 +1,3 @@
----
-sidebar_label: From v1 to v2
----
 # Upgrading from v1 to v2
 
 LmcAdmin v2 is a major version upgrade with many breaking changes that prevent
