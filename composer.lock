@@ -2140,16 +2140,16 @@
         },
         {
             "name": "laminas/laminas-test",
-            "version": "4.10.0",
+            "version": "4.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-test.git",
-                "reference": "607c55ccb98bf3ade42820a1cf14e9af1f4d1cc8"
+                "reference": "cd714a8ac91950fff8858041e7e0861f631fd302"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-test/zipball/607c55ccb98bf3ade42820a1cf14e9af1f4d1cc8",
-                "reference": "607c55ccb98bf3ade42820a1cf14e9af1f4d1cc8",
+                "url": "https://api.github.com/repos/laminas/laminas-test/zipball/cd714a8ac91950fff8858041e7e0861f631fd302",
+                "reference": "cd714a8ac91950fff8858041e7e0861f631fd302",
                 "shasum": ""
             },
             "require": {
@@ -2210,7 +2210,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2023-12-02T14:06:29+00:00"
+            "time": "2024-09-16T22:22:45+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -4601,16 +4601,16 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v7.1.1",
+            "version": "v7.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "01ce8174447f1f1dd33a5854b01beef79061d9fa"
+                "reference": "b92af238457a7cdd2738f941cd525d76313e8283"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/01ce8174447f1f1dd33a5854b01beef79061d9fa",
-                "reference": "01ce8174447f1f1dd33a5854b01beef79061d9fa",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/b92af238457a7cdd2738f941cd525d76313e8283",
+                "reference": "b92af238457a7cdd2738f941cd525d76313e8283",
                 "shasum": ""
             },
             "require": {
@@ -4648,7 +4648,7 @@
             "description": "Eases DOM navigation for HTML and XML documents",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/dom-crawler/tree/v7.1.1"
+                "source": "https://github.com/symfony/dom-crawler/tree/v7.1.5"
             },
             "funding": [
                 {
@@ -4664,7 +4664,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-31T14:57:53+00:00"
+            "time": "2024-09-15T06:48:17+00:00"
         },
         {
             "name": "symfony/filesystem",
